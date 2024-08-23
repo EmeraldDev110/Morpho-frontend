@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FKGrotesk";
+  src: url("/font/FKGroteskNeueTrial-Regular-BF6576818c3af74.otf")
+    format("truetype");
+  font-style: normal;
+}
+
+.grotesk {
+  font-family: FKGrotesk;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("/font/HelveticaNeueUltraLightv130.otf") format("truetype");
+  font-style: normal;
+}
+
+.helvetica {
+  font-family: helvetica;
+}
+
+.empowering ::-webkit-scrollbar {
+  display: none;
+}
+
+.left-border {
+  position: absolute;
+  background: radial-gradient(closest-side, rgb(0, 133, 255), rgb(0, 0, 0));
+  opacity: 0.2;
+  z-index: 0;
+  height: 1200px;
+  width: 100%;
+  left: -85%;
+  top: 0;
+}
+
+.icon-item {
+  width: 84px;
+  height: 84px;
+  border-radius: 30px;
+  flex-shrink: 0;
+  box-shadow: rgba(5, 0, 255, 0.4) 0px 0px 90px 0px inset,
+    rgba(0, 145, 250, 0.8) 0px 0px 10px 0px inset,
+    rgb(0, 133, 255) 0px 0px 40px 0px inset;
+}
+
+.icon-item > img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .icon-item {
+    width: 140px;
+    height: 140px;
+  }
+
+  .icon-item > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.icon-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+.icon-scroll-right {
+  animation: scroll-right 20s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .icon-scroll-left,
+  .icon-scroll-right {
+    animation: none;
+    transform: translateX(0);
+  }
+}
